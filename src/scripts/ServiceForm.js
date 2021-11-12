@@ -37,7 +37,7 @@ const mainContainer = document.querySelector("#container")
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitRequest") {
         // Get what the user typed into the form fields
-        const userDescription = document.querySelector("input[name='serviceDescription']").value
+        const userDescription = document.querySelector("input[na me='serviceDescription']").value
         const userAddress = document.querySelector("input[name='serviceAddress']").value
         const userBudget = document.querySelector("input[name='serviceBudget']").value
         const userDate = document.querySelector("input[name='serviceDate']").value
