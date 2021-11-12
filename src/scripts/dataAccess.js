@@ -1,5 +1,6 @@
 const applicationState = {
-    requests: []
+    requests: [],
+    plumbers: []
 }
 
 const API = "http://localhost:8088"
@@ -15,8 +16,23 @@ export const fetchRequests = () => {
         )
 }
 
+export const fetchPlumbers = () => {
+    return fetch(`${API}/plumbers`)
+        .then(response => response.json())
+        .then(
+            (servicePlumbers) => {
+                // Store the external state in application state
+                applicationState.plumbers = servicePlumbers
+            }
+        )
+}
+
 export const getRequests = () => {
     return applicationState.requests.map(request => ({...request}))
+}
+
+export const getPlumbers = () => {
+    return applicationState.plumbers.map(plumber => ({...plumber}))
 }
 
 export const sendRequest = (userServiceRequest) => {
